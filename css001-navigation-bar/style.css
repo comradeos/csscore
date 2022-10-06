@@ -51,6 +51,7 @@ a.active, a:hover {
     line-height: 80px;
     margin-right: 40px ;
     cursor: pointer;
+    display: none;
 }
 
 #check {
@@ -58,16 +59,24 @@ a.active, a:hover {
 }
 
 @media (max-width: 952px) {
+
+    check-btn {
+        display: block;
+    }
+
     label.logo {
         font-size: 30px;
         padding-left: 50px;
     }
+
     nav ul li a {
         font-size: 16px;
     }
+
 }
 
 @media (max-width: 858px) {
+
     .check-btn {
         display: block;
     }
@@ -98,6 +107,7 @@ a.active, a:hover {
     #check:checked ~ ul {
         right: -20px;
     }
+
 }
 
 /* https://www.youtube.com/watch?v=oLgtucwjVII */
