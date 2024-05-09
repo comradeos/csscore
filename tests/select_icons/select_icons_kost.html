@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+    <select name="s1" id="s1">
+        <option value="1">Hello</option>
+        <option value="2">World</option>
+    </select>
+    
+    <div class="selectS1">
+        <div class="selected" data-value="1">Hello</div>
+        <div class="list">
+            <div class="item" data-value="1">Hello</div>
+            <div class="item" data-value="2">World</div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.selectS1 .list').hide();
+
+            $('.selectS1 .selected').click(function() {
+                $('.selectS1 .list').toggle();
+            });
+
+            $('.selectS1 .item').click(function() {
+                var value = $(this).data('value');
+                var text = $(this).text();
+                $('.selectS1 .selected').text(text);
+                $('.selectS1 .selected').data('value', value);
+                $('.selectS1 .list').hide();
+                $('#s1').val(value);
+            });
+        });
+    </script>
+
+</body>
+</html>
